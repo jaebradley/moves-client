@@ -20,4 +20,24 @@ describe('Moves Client Integration Test', () => {
       });
     });
   });
+
+  describe('#getUserProfile', () => {
+    it('should return user profile', async () => {
+      const userProfile = await client.getUserProfile();
+      expect(userProfile).not.toBeUndefined();
+      // Sanity check - nothing terribly revealing here...I think?
+      expect(userProfile.profile).toEqual({
+        firstDate: '20170217',
+        currentTimeZone: { id: 'America/New_York', offset: -18000 },
+        localization: {
+          language: 'en-US',
+          locale: 'en_US',
+          firstWeekDay: 1,
+          metric: false,
+        },
+        caloriesAvailable: false,
+        platform: 'ios',
+      });
+    });
+  });
 });

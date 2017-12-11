@@ -17,6 +17,13 @@ class MovesClient {
       url: '/activities',
     }).then(response => response.data);
   }
+
+  async getUserProfile() {
+    return this.httpClient({
+      method: 'get',
+      url: '/user/profile',
+    }).then(response => response.data);
+  }
 }
 
 export default MovesClient;
