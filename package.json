@@ -6,7 +6,7 @@
   "scripts": {
     "codecov": "codecov",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "compile": "babel -d build/ src/ --copy-files --ignore node_modules,*.test.js",
+    "compile": "babel -d build/ src/ --copy-files --ignore node_modules,*.test.js,setupTest.js",
     "lint": "eslint --ext .js .",
     "test": "jest --coverage",
     "prepublishOnly": "npm run compile",
